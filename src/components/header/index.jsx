@@ -1,8 +1,7 @@
-import Button from "../Button";
 import Vsl from "../Vsl";
 import * as S from "./style";
 
-export default function Header({}) {
+export default function Header() {
     return (
         <S.Container>
             <div className="headline">
