@@ -1,5 +1,4 @@
-import styled, {keyframes} from "styled-components";
-
+import styled, { keyframes } from "styled-components";
 
 const moveBackground = keyframes`
   0% {
@@ -13,33 +12,38 @@ const moveBackground = keyframes`
   }
 `;
 
+const zoomIn = keyframes`
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1); /* Ajuste o valor da escala para um efeito sutil */
+  }
+`;
+
 export const Button = styled.a`
-    font-family: 'Sora', sans-serif;
-    cursor: pointer;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.72);
-    padding: 10px 20px;
-    text-transform: uppercase;
-    font-weight: 700;
+  font-family: 'Sora', sans-serif;
+  cursor: pointer;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.72);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
   font-size: 21px;
   border-radius: 5px;
   border: none;
   color: #fff;
-  cursor: pointer;
-  background: linear-gradient(
-    90deg,
-    #fff500,
-    #c67000,
-    #f48a00
-  );
+  -webkit-box-shadow: 0px 0px 71px 7px #fff500;
+  -moz-box-shadow: 0px 0px 71px 7px #fff500;
+  box-shadow: 0px 0px 71px #fff500;
+  background: linear-gradient(90deg, #fff500, #c67000, #f48a00);
   background-size: 700% 400%;
-  animation: ${moveBackground} 5s ease infinite;
+  animation: ${zoomIn} 0.7s ease-in-out infinite alternate, ${moveBackground} 5s ease infinite; /* Aplica ambas as animações */
 
   &:hover {
-    animation: none; /* Remove a animação no hover se desejar */
+    animation: ${zoomIn} 0.7s ease-in-out infinite alternate, none; /* Reaplica a animação zoomIn no hover */
   }
 
   &:focus {
     outline: none;
   }
-
-` 
+`;
