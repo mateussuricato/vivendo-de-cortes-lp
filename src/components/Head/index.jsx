@@ -1,7 +1,7 @@
 import Vsl from "../Vsl";
 import * as S from "./style";
 
-export default function Header() {
+export default function Head() {
     return (
         <S.Container>
             <div className="headline">
