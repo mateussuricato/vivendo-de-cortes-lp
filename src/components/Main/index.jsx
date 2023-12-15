@@ -3,7 +3,6 @@ import * as S from "./style"
 export default function Main() {
     return (
         <div>
-     
             <S.Container>
                 <S.FlexOne>
                     <h1>+300.000.000 de views</h1>
