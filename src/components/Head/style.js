@@ -14,6 +14,7 @@ export const Container = styled.div`
         font-weight: 400;
         margin: 0 auto 0 auto;
         padding-top: 2rem;
+        padding: 0 1rem;
 
         
         .negrito {

@@ -9,10 +9,11 @@ export const Container = styled.div`
     justify-content: center;
     background-color: black;
     color: white;
+    padding: 2rem 1rem;
 `
 
 export const FlexOne = styled.div`
- width: 50%;
+
 max-width: 400px;
  h1 {
     color: #ff9300;
