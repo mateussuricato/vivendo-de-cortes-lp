@@ -9,12 +9,18 @@ export const Container = styled.div`
 
     .headline {
         font-size: 2rem;
-        max-width: 550px;
+        max-width: 580px;
         text-align: center;
         font-weight: 400;
         margin: 0 auto 0 auto;
         padding-top: 2rem;
         padding: 0 1rem;
+
+        @media (max-width: 579px) {
+  
+    font-size: 1.5rem;
+ 
+  }
 
         
         .negrito {
