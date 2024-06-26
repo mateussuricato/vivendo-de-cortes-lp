@@ -63,14 +63,14 @@ export const Container = styled.div`
     }
 
     .swiper_container {
-        height: 33rem;
+        height: 30rem;
         padding: 2rem 0;
         position: relative;
     }
 
     .swiper-slide {
-        width: 291px;
-        height: 392px;
+        width: 261.9px;
+        height: 352.8px;
         position: relative;
     }
 
@@ -87,8 +87,8 @@ export const Container = styled.div`
     }
 
     .swiper-slide img {
-        width: 291px;
-        height: 392px;
+        width: 261.9px;
+        height: 352.8px;
         object-fit: cover;
     }
 
