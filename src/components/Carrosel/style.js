@@ -21,7 +21,7 @@ export const Depoimentos = styled.div`
     scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
 
     img {
-        width: 300px;
+        width: 250px;
         height: 100%;
         border-radius: 12px;
         pointer-events: none;
