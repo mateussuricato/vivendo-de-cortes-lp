@@ -13,6 +13,8 @@ import image8 from '../../images/perfils/8.webp';
 
 const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
+const duplicatedImages = [...images, ...images]; // Duplicate the images
+
 const Carrossel = () => {
     const carousel = useRef(null);
     const isDragging = useRef(false);
@@ -45,7 +47,7 @@ const Carrossel = () => {
         if (!isDragging.current) return;
         e.preventDefault();
         const x = e.pageX - carousel.current.offsetLeft;
-        const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
+        const walk = (x - startX.current) * 2; // Adjust scroll speed
         carousel.current.scrollLeft = scrollLeft.current - walk;
     };
 
@@ -79,8 +81,19 @@ const Carrossel = () => {
             }
         }
 
-        const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
+        const walk = (x - startX.current) * 2; // Adjust scroll speed
         carousel.current.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const handleScroll = () => {
+        if (!carousel.current) return;
+        const { scrollLeft, scrollWidth, clientWidth } = carousel.current;
+
+        if (scrollLeft <= 0) {
+            carousel.current.scrollLeft = scrollWidth / 2 - clientWidth;
+        } else if (scrollLeft + clientWidth >= scrollWidth) {
+            carousel.current.scrollLeft = scrollWidth / 2 - clientWidth;
+        }
     };
 
     useEffect(() => {
@@ -90,16 +103,21 @@ const Carrossel = () => {
         currentCarousel.addEventListener('mouseleave', handleMouseLeave);
         currentCarousel.addEventListener('mouseup', handleMouseUp);
         currentCarousel.addEventListener('mousemove', handleMouseMove);
+        currentCarousel.addEventListener('scroll', handleScroll);
 
         currentCarousel.addEventListener('touchstart', handleTouchStart);
         currentCarousel.addEventListener('touchend', handleTouchEnd);
         currentCarousel.addEventListener('touchmove', handleTouchMove);
+
+        // Initial scroll to middle of the duplicated images
+        currentCarousel.scrollLeft = currentCarousel.scrollWidth / 4;
 
         return () => {
             currentCarousel.removeEventListener('mousedown', handleMouseDown);
             currentCarousel.removeEventListener('mouseleave', handleMouseLeave);
             currentCarousel.removeEventListener('mouseup', handleMouseUp);
             currentCarousel.removeEventListener('mousemove', handleMouseMove);
+            currentCarousel.removeEventListener('scroll', handleScroll);
 
             currentCarousel.removeEventListener('touchstart', handleTouchStart);
             currentCarousel.removeEventListener('touchend', handleTouchEnd);
@@ -109,7 +127,7 @@ const Carrossel = () => {
 
     return (
         <S.Depoimentos ref={carousel} className="depoimentos">
-            {images.map((image, index) => (
+            {duplicatedImages.map((image, index) => (
                 <img key={index} src={image} alt={`Depoimento ${index + 1}`} />
             ))}
         </S.Depoimentos>
