@@ -17,14 +17,10 @@ const duplicatedImages = [...images, ...images]; // Duplicate the images
 
 const Carrossel = () => {
     const carousel = useRef(null);
-    const isDragging = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
-    const startY = useRef(0);
-    const isHorizontalScroll = useRef(false);
 
     const handleMouseDown = (e) => {
-        isDragging.current = true;
         startX.current = e.pageX - carousel.current.offsetLeft;
         scrollLeft.current = carousel.current.scrollLeft;
         carousel.current.style.cursor = 'grabbing';
@@ -32,61 +28,34 @@ const Carrossel = () => {
     };
 
     const handleMouseLeave = () => {
-        isDragging.current = false;
         carousel.current.style.cursor = 'grab';
         carousel.current.style.scrollBehavior = 'smooth';
     };
 
     const handleMouseUp = () => {
-        isDragging.current = false;
         carousel.current.style.cursor = 'grab';
         carousel.current.style.scrollBehavior = 'smooth';
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging.current) return;
-        e.preventDefault();
         const x = e.pageX - carousel.current.offsetLeft;
         const walk = (x - startX.current) * 2; // Adjust scroll speed
         carousel.current.scrollLeft = scrollLeft.current - walk;
     };
 
     const handleTouchStart = (e) => {
-        isDragging.current = true;
         startX.current = e.touches[0].pageX - carousel.current.offsetLeft;
         scrollLeft.current = carousel.current.scrollLeft;
-        startY.current = e.touches[0].pageY;
-        isHorizontalScroll.current = false;
         carousel.current.style.scrollBehavior = 'auto';
     };
 
-    const handleTouchEnd = () => {
-        isDragging.current = false;
-        carousel.current.style.scrollBehavior = 'smooth';
-    };
-
     const handleTouchMove = (e) => {
-        if (!isDragging.current) return;
         const x = e.touches[0].pageX - carousel.current.offsetLeft;
-        const y = e.touches[0].pageY;
-
-        if (!isHorizontalScroll.current) {
-            const moveY = Math.abs(y - startY.current);
-            const moveX = Math.abs(x - startX.current);
-            if (moveX > moveY) {
-                isHorizontalScroll.current = true;
-            } else {
-                isDragging.current = false;
-                return;
-            }
-        }
-
         const walk = (x - startX.current) * 2; // Adjust scroll speed
         carousel.current.scrollLeft = scrollLeft.current - walk;
     };
 
     const handleScroll = () => {
-        if (!carousel.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = carousel.current;
 
         if (scrollLeft <= 0) {
@@ -106,7 +75,6 @@ const Carrossel = () => {
         currentCarousel.addEventListener('scroll', handleScroll);
 
         currentCarousel.addEventListener('touchstart', handleTouchStart);
-        currentCarousel.addEventListener('touchend', handleTouchEnd);
         currentCarousel.addEventListener('touchmove', handleTouchMove);
 
         // Initial scroll to middle of the duplicated images
@@ -120,7 +88,6 @@ const Carrossel = () => {
             currentCarousel.removeEventListener('scroll', handleScroll);
 
             currentCarousel.removeEventListener('touchstart', handleTouchStart);
-            currentCarousel.removeEventListener('touchend', handleTouchEnd);
             currentCarousel.removeEventListener('touchmove', handleTouchMove);
         };
     }, []);
