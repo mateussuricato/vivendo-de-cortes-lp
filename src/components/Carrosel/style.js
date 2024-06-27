@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Depoimentos = styled.div`
     display: flex;
     margin: auto;
+    gap: 1rem;
+    padding: 0 1rem;
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
