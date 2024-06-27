@@ -28,7 +28,7 @@ export default function Carrosel() {
             <motion.div 
             className="inner"
             drag="x"
-            dragConstraints={{right: 0, left: -1430}}
+            dragConstraints={{right: 0, left: -width}}
             initial={{x: 300}}
             animate={{x: 0}}
             transition={{duration: 0.8}}
