@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Depoimentos = styled.div`
-     display: flex;
+    display: flex;
     margin: auto;
     max-width: 100%;
     overflow-x: auto;
@@ -9,7 +9,6 @@ export const Depoimentos = styled.div`
     margin: 3rem 0 1rem 0;
     cursor: grab;
     user-select: none;
- 
 
     &::-webkit-scrollbar {
         display: none;
@@ -21,7 +20,7 @@ export const Depoimentos = styled.div`
         width: 250px;
         height: 100%;
         pointer-events: none;
-        user-select: none; /* Evita a seleção de texto/imagens */
+        user-select: none;
         border-radius: 12px;
         border: 2px solid transparent;
         background-image: linear-gradient(white, white), linear-gradient(45deg, #FF7F50, #FF4500, #FF8C00, #FFD700, #FFA500);
