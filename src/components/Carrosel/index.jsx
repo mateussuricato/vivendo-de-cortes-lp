@@ -43,20 +43,47 @@ export default function Carrosel() {
         carousel.current.scrollLeft = scrollLeft - walk;
     };
 
+    const handleTouchStart = (e) => {
+        setIsDown(true);
+        setStartX(e.touches[0].pageX - carousel.current.offsetLeft);
+        setScrollLeft(carousel.current.scrollLeft);
+    };
+
+    const handleTouchEnd = () => {
+        setIsDown(false);
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.touches[0].pageX - carousel.current.offsetLeft;
+        const walk = (x - startX) * 2; // Velocidade de rolagem
+        carousel.current.scrollLeft = scrollLeft - walk;
+    };
+
     useEffect(() => {
         const currentCarousel = carousel.current;
+
         currentCarousel.addEventListener('mousedown', handleMouseDown);
         currentCarousel.addEventListener('mouseleave', handleMouseLeave);
         currentCarousel.addEventListener('mouseup', handleMouseUp);
         currentCarousel.addEventListener('mousemove', handleMouseMove);
+
+        currentCarousel.addEventListener('touchstart', handleTouchStart);
+        currentCarousel.addEventListener('touchend', handleTouchEnd);
+        currentCarousel.addEventListener('touchmove', handleTouchMove);
 
         return () => {
             currentCarousel.removeEventListener('mousedown', handleMouseDown);
             currentCarousel.removeEventListener('mouseleave', handleMouseLeave);
             currentCarousel.removeEventListener('mouseup', handleMouseUp);
             currentCarousel.removeEventListener('mousemove', handleMouseMove);
+
+            currentCarousel.removeEventListener('touchstart', handleTouchStart);
+            currentCarousel.removeEventListener('touchend', handleTouchEnd);
+            currentCarousel.removeEventListener('touchmove', handleTouchMove);
         };
-    }, [handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove]);
+    }, [handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove, handleTouchStart, handleTouchEnd, handleTouchMove]);
 
     return (
         <S.Container ref={carousel}>
