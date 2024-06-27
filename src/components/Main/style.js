@@ -63,6 +63,10 @@ export const CardsContainer = styled.div`
 `
 
 export const ModulosContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
    padding: 2rem 0;
    background-color: #181920;
 

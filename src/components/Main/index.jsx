@@ -1,6 +1,7 @@
 import SwiperDiv from "../SwiperDiv"
 import Card from "../Card"
 import * as S from "./style"
+import Carrosel from "../Carrosel"
 
 export default function Main() {
     return (
@@ -23,6 +24,7 @@ export default function Main() {
             <S.ModulosContainer>
                 <h2>Veja um pouco do que você irá aprender</h2>
                 <SwiperDiv></SwiperDiv>
+                <Carrosel></Carrosel>
             </S.ModulosContainer>
         </div>
     )
