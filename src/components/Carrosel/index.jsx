@@ -1,6 +1,5 @@
-import * as S from "./style"
-import { motion } from "framer-motion"
-import { useState, useEffect, useRef } from "react";
+import React, { useRef, useState, useEffect } from 'react';
+import * as S from './style';
 
 import image1 from '../../images/perfils/1.webp';
 import image2 from '../../images/perfils/2.webp';
@@ -11,37 +10,61 @@ import image6 from '../../images/perfils/6.webp';
 import image7 from '../../images/perfils/7.webp';
 import image8 from '../../images/perfils/8.webp';
 
-const images = [image1, image2, image3,image4, image5, image6, image7, image8]
+const images = [image1, image2, image3, image4, image5, image6, image7, image8];
 
 export default function Carrosel() {
+    const carousel = useRef(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
 
-    const carousel = useRef()
-    const [width, setWidth] = useState(0)
+    const handleMouseDown = (e) => {
+        setIsDown(true);
+        setStartX(e.pageX - carousel.current.offsetLeft);
+        setScrollLeft(carousel.current.scrollLeft);
+        carousel.current.style.cursor = 'grabbing';
+    };
 
-    useEffect(()=> {
-        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-    }, [])
+    const handleMouseLeave = () => {
+        setIsDown(false);
+        carousel.current.style.cursor = 'grab';
+    };
+
+    const handleMouseUp = () => {
+        setIsDown(false);
+        carousel.current.style.cursor = 'grab';
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.current.offsetLeft;
+        const walk = (x - startX) * 2; // Velocidade de rolagem
+        carousel.current.scrollLeft = scrollLeft - walk;
+    };
+
+    useEffect(() => {
+        const currentCarousel = carousel.current;
+        currentCarousel.addEventListener('mousedown', handleMouseDown);
+        currentCarousel.addEventListener('mouseleave', handleMouseLeave);
+        currentCarousel.addEventListener('mouseup', handleMouseUp);
+        currentCarousel.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            currentCarousel.removeEventListener('mousedown', handleMouseDown);
+            currentCarousel.removeEventListener('mouseleave', handleMouseLeave);
+            currentCarousel.removeEventListener('mouseup', handleMouseUp);
+            currentCarousel.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [handleMouseDown, handleMouseLeave, handleMouseUp, handleMouseMove]);
 
     return (
-        <S.Container>
-           <motion.div ref={carousel} className="carousel" whileTap={{cursor: "grabbing"}}>
-            <motion.div 
-            className="inner"
-            drag="x"
-            dragConstraints={{right: 0, left: -width}}
-            initial={{x: 300}}
-            animate={{x: 0}}
-            transition={{duration: 0.8}}
-            >
-
-                {images.map(image => (
-                    <motion.div className="item" key={image}>
-                        <img src={image} alt="" />           
-                    </motion.div>
-                ))}
-                
-            </motion.div>
-           </motion.div>
+        <S.Container ref={carousel}>
+            {images.map((image, index) => (
+                <div className="item" key={index}>
+                    <img src={image} alt={`Imagem ${index + 1}`} />
+                </div>
+            ))}
         </S.Container>
-    )
+    );
 }

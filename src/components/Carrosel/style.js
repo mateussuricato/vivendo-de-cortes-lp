@@ -1,26 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-    
-    .inner {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .item {
-        
-    }
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    max-width: 1150px;
+    cursor: grab;
+    user-select: none; /* Evita a seleção de texto/imagens */
 
     .item img {
-      border-radius: 12px;
-      pointer-events: none;
-      max-width: 300px;
+        border-radius: 12px;
+        max-width: 300px;
+        pointer-events: none;
+        user-select: none; /* Evita a seleção de texto/imagens */
     }
-
-    .carousel {
-        cursor: grab;
-        overflow: hidden;
-        max-width: 1150px;
-    }
-
 `;
