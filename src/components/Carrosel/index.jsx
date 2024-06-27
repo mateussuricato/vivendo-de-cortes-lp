@@ -47,6 +47,25 @@ const Carrosel = () => {
         carousel.current.scrollLeft = scrollLeft.current - walk;
     };
 
+    const handleTouchStart = (e) => {
+        isDragging.current = true;
+        startX.current = e.touches[0].pageX - carousel.current.offsetLeft;
+        scrollLeft.current = carousel.current.scrollLeft;
+        carousel.current.style.scrollBehavior = 'auto';
+    };
+
+    const handleTouchEnd = () => {
+        isDragging.current = false;
+        carousel.current.style.scrollBehavior = 'smooth';
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDragging.current) return;
+        const x = e.touches[0].pageX - carousel.current.offsetLeft;
+        const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
+        carousel.current.scrollLeft = scrollLeft.current - walk;
+    };
+
     useEffect(() => {
         const currentCarousel = carousel.current;
 
@@ -55,20 +74,26 @@ const Carrosel = () => {
         currentCarousel.addEventListener('mouseup', handleMouseUp);
         currentCarousel.addEventListener('mousemove', handleMouseMove);
 
+        currentCarousel.addEventListener('touchstart', handleTouchStart);
+        currentCarousel.addEventListener('touchend', handleTouchEnd);
+        currentCarousel.addEventListener('touchmove', handleTouchMove);
+
         return () => {
             currentCarousel.removeEventListener('mousedown', handleMouseDown);
             currentCarousel.removeEventListener('mouseleave', handleMouseLeave);
             currentCarousel.removeEventListener('mouseup', handleMouseUp);
             currentCarousel.removeEventListener('mousemove', handleMouseMove);
+
+            currentCarousel.removeEventListener('touchstart', handleTouchStart);
+            currentCarousel.removeEventListener('touchend', handleTouchEnd);
+            currentCarousel.removeEventListener('touchmove', handleTouchMove);
         };
     }, []);
 
     return (
         <S.Depoimentos ref={carousel} className="depoimentos">
             {images.map((image, index) => (
-                <div className="imageContainer">
-                    <img key={index} src={image} alt={`Depoimento ${index + 1}`} />
-                </div>
+                <img key={index} src={image} alt={`Depoimento ${index + 1}`} />
             ))}
         </S.Depoimentos>
     );
