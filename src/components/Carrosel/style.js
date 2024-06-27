@@ -14,13 +14,13 @@ export const Container = styled.div`
     .item img {
       border-radius: 12px;
       pointer-events: none;
-      max-width: 320px;
+      max-width: 300px;
     }
 
     .carousel {
         cursor: grab;
         overflow: hidden;
-        max-width: 1250px;
+        max-width: 1150px;
     }
 
 `;
