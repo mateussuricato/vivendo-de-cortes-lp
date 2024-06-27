@@ -10,7 +10,7 @@ export const Depoimentos = styled.div`
     cursor: grab;
     user-select: none;
     /* touch-action: pan-y; */
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
         display: none;
