@@ -18,6 +18,8 @@ const Carrosel = () => {
     const isDragging = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
+    const startY = useRef(0);
+    const isHorizontalScroll = useRef(false);
 
     const handleMouseDown = (e) => {
         isDragging.current = true;
@@ -51,6 +53,8 @@ const Carrosel = () => {
         isDragging.current = true;
         startX.current = e.touches[0].pageX - carousel.current.offsetLeft;
         scrollLeft.current = carousel.current.scrollLeft;
+        startY.current = e.touches[0].pageY;
+        isHorizontalScroll.current = false;
         carousel.current.style.scrollBehavior = 'auto';
     };
 
@@ -62,6 +66,19 @@ const Carrosel = () => {
     const handleTouchMove = (e) => {
         if (!isDragging.current) return;
         const x = e.touches[0].pageX - carousel.current.offsetLeft;
+        const y = e.touches[0].pageY;
+
+        if (!isHorizontalScroll.current) {
+            const moveY = Math.abs(y - startY.current);
+            const moveX = Math.abs(x - startX.current);
+            if (moveX > moveY) {
+                isHorizontalScroll.current = true;
+            } else {
+                isDragging.current = false;
+                return;
+            }
+        }
+
         const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
         carousel.current.scrollLeft = scrollLeft.current - walk;
     };

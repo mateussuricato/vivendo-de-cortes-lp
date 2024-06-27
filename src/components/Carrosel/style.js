@@ -9,7 +9,7 @@ export const Depoimentos = styled.div`
     margin: 3rem 0 1rem 0;
     cursor: grab;
     user-select: none; /* Evita a seleção de texto/imagens */
-    touch-action: pan-x; /* Permite apenas o scrolling horizontal na página */
+    touch-action: pan-y; /* Permite a rolagem vertical quando não estiver arrastando horizontalmente */
     scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
