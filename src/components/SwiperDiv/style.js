@@ -1,32 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
-    h1 {
-        color: yellow;
-    }
-
-    *,
-    *::before,
-    *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        list-style-type: none;
-    }
-
-    :root {
-        --primary: #ffff00;
-        --white: #ffffff;
-        --bg: #f5f5f5;
-    }
-
-    html {
-        font-size: 62.5%;
-        scroll-behavior: smooth;
-    }
-
-    @media (min-width: 1440px) {
+    /* @media (min-width: 1440px) {
         html {
             zoom: 1.5;
         }
@@ -42,7 +17,7 @@ export const Container = styled.div`
         html {
             zoom: 2.5;
         }
-    }
+    } */
 
     ::-webkit-scrollbar {
         width: 1.3rem;
@@ -64,7 +39,7 @@ export const Container = styled.div`
 
     .swiper_container {
         height: 30rem;
-        padding: 2rem 0;
+        padding: 2rem 0 1rem 0;
         position: relative;
     }
 
@@ -138,15 +113,7 @@ export const Container = styled.div`
         }
     }
 
-    .slider-controler .slider-arrow {
-        background: var(--white);
-        width: 3.5rem;
-        height: 3.5rem;
-        border-radius: 50%;
-        left: 42%;
-        transform: translateX(-42%);
-        filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-    }
+   
 
     .slider-controler .slider-arrow ion-icon {
         font-size: 2rem;
@@ -157,9 +124,13 @@ export const Container = styled.div`
         content: '';
     }
 
+    .swiper-wrapper {
+        width: 10%;
+    }
+
     .swiper-pagination {
         position: relative;
-        width: 15rem !important;
+        width: 100px !important;
         bottom: 1rem;
     }
 

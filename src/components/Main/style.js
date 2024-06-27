@@ -63,15 +63,23 @@ export const CardsContainer = styled.div`
 `
 
 export const ModulosContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
    padding: 2rem 0;
    background-color: #181920;
 
    h2 {
       color: #ffffff;
       text-align: center;
+   }
+
+   .titlePerfils {
+      margin-top: 2rem;
+   }
+
+   .carrosselContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: -2rem;
    }
 `

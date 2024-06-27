@@ -1,26 +1,30 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Depoimentos = styled.div`
     display: flex;
+    padding: 0 1rem;
     gap: 1rem;
-    overflow-x: auto; /* Permite rolagem horizontal */
-    overflow-y: hidden; /* Evita rolagem vertical */
     max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 3rem 0 1rem 0;
     cursor: grab;
     user-select: none; /* Evita a seleção de texto/imagens */
     touch-action: pan-x; /* Permite apenas o scrolling horizontal na página */
-    scroll-behavior: smooth; /* Adiciona suavidade à rolagem */
+    scroll-behavior: smooth;
 
-    .item {
-        flex: 0 0 auto; /* Evita o colapso dos itens */
-        min-width: 300px; /* Define uma largura mínima para os itens */
+    &::-webkit-scrollbar {
+        display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
     }
+    -ms-overflow-style: none;  /* Oculta a barra de rolagem no Internet Explorer e Edge */
+    scrollbar-width: none; /* Oculta a barra de rolagem no Firefox */
 
-    .item img {
+    img {
+        width: 300px;
+        height: 100%;
         border-radius: 12px;
-        width: 100%; /* Faz com que a imagem ocupe toda a largura do item */
-        height: auto; /* Mantém a proporção da imagem */
         pointer-events: none;
         user-select: none; /* Evita a seleção de texto/imagens */
+        transition: transform 0.2s; /* Adiciona uma transição suave ao arrastar */
     }
 `;
