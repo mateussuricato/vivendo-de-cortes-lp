@@ -64,7 +64,7 @@ export const CardsContainer = styled.div`
 
 export const ModulosContainer = styled.div`
    padding: 2rem 0;
-   background-color: #181920;
+   background-color: #000000;
 
    h2 {
       color: #ffffff;
@@ -73,6 +73,10 @@ export const ModulosContainer = styled.div`
 
    .titlePerfils {
       margin-top: 2rem;
+   }
+
+   .titleProva {
+      margin-top: 4rem;
    }
 
    .carrosselContainer {

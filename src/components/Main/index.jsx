@@ -1,7 +1,8 @@
 import SwiperDiv from "../SwiperDiv"
 import Card from "../Card"
 import * as S from "./style"
-import Carrosel from "../Carrosel"
+import CarrosselProvas from "../CarrosselProvas"
+import Carrossel from "../Carrossel"
 
 export default function Main() {
     return (
@@ -26,7 +27,11 @@ export default function Main() {
                 <SwiperDiv></SwiperDiv>
                 <div className="carrosselContainer">
                     <h2 className="titlePerfils">Páginas que aplicaram o Método e estão Vivendo de Cortes</h2>
-                <Carrosel></Carrosel>
+                <Carrossel></Carrossel>
+                </div>
+                <div className="carrosselContainer">
+                    <h2 className="titleProva">Mais Resultados do Método</h2>
+                <CarrosselProvas></CarrosselProvas>
                 </div>
             </S.ModulosContainer>
         </div>
