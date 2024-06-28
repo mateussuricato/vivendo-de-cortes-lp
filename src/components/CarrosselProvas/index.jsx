@@ -1,6 +1,10 @@
 import React from 'react';
 import * as S from './style';
 import { useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import { EffectCards } from 'swiper/modules';
 
 import image0 from '../../images/provas/0.webp';
 import image1 from '../../images/provas/1.webp';
@@ -24,107 +28,19 @@ import image17 from '../../images/provas/17.webp';
 
 const images = [image0, image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17];
 
-const CarrosselProvas = () => {
-    const carousel = useRef(null);
-    const isDragging = useRef(false);
-    const startX = useRef(0);
-    const scrollLeft = useRef(0);
-    const startY = useRef(0);
-    const isHorizontalScroll = useRef(false);
-
-    const handleMouseDown = (e) => {
-        isDragging.current = true;
-        startX.current = e.pageX - carousel.current.offsetLeft;
-        scrollLeft.current = carousel.current.scrollLeft;
-        carousel.current.style.cursor = 'grabbing';
-        carousel.current.style.scrollBehavior = 'auto';
-    };
-
-    const handleMouseLeave = () => {
-        isDragging.current = false;
-        carousel.current.style.cursor = 'grab';
-        carousel.current.style.scrollBehavior = 'smooth';
-    };
-
-    const handleMouseUp = () => {
-        isDragging.current = false;
-        carousel.current.style.cursor = 'grab';
-        carousel.current.style.scrollBehavior = 'smooth';
-    };
-
-    const handleMouseMove = (e) => {
-        if (!isDragging.current) return;
-        e.preventDefault();
-        const x = e.pageX - carousel.current.offsetLeft;
-        const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
-        carousel.current.scrollLeft = scrollLeft.current - walk;
-    };
-
-    const handleTouchStart = (e) => {
-        isDragging.current = true;
-        startX.current = e.touches[0].pageX - carousel.current.offsetLeft;
-        scrollLeft.current = carousel.current.scrollLeft;
-        startY.current = e.touches[0].pageY;
-        isHorizontalScroll.current = false;
-        carousel.current.style.scrollBehavior = 'auto';
-    };
-
-    const handleTouchEnd = () => {
-        isDragging.current = false;
-        carousel.current.style.scrollBehavior = 'smooth';
-    };
-
-    const handleTouchMove = (e) => {
-        if (!isDragging.current) return;
-        const x = e.touches[0].pageX - carousel.current.offsetLeft;
-        const y = e.touches[0].pageY;
-
-        if (!isHorizontalScroll.current) {
-            const moveY = Math.abs(y - startY.current);
-            const moveX = Math.abs(x - startX.current);
-            if (moveX > moveY) {
-                isHorizontalScroll.current = true;
-            } else {
-                isDragging.current = false;
-                return;
-            }
-        }
-
-        const walk = (x - startX.current) * 2; // Ajuste a velocidade do arrasto
-        carousel.current.scrollLeft = scrollLeft.current - walk;
-    };
-
-    useEffect(() => {
-        const currentCarousel = carousel.current;
-
-        currentCarousel.addEventListener('mousedown', handleMouseDown);
-        currentCarousel.addEventListener('mouseleave', handleMouseLeave);
-        currentCarousel.addEventListener('mouseup', handleMouseUp);
-        currentCarousel.addEventListener('mousemove', handleMouseMove);
-
-        currentCarousel.addEventListener('touchstart', handleTouchStart);
-        currentCarousel.addEventListener('touchend', handleTouchEnd);
-        currentCarousel.addEventListener('touchmove', handleTouchMove);
-
-        return () => {
-            currentCarousel.removeEventListener('mousedown', handleMouseDown);
-            currentCarousel.removeEventListener('mouseleave', handleMouseLeave);
-            currentCarousel.removeEventListener('mouseup', handleMouseUp);
-            currentCarousel.removeEventListener('mousemove', handleMouseMove);
-
-            currentCarousel.removeEventListener('touchstart', handleTouchStart);
-            currentCarousel.removeEventListener('touchend', handleTouchEnd);
-            currentCarousel.removeEventListener('touchmove', handleTouchMove);
-        };
-    }, []);
-
+export default function carrosselProvas() {
     return (
-        <S.Depoimentos ref={carousel} className="depoimentos">
+        <S.Container>
+          <Swiper
+            effect={'cards'}
+            grabCursor={true}
+            modules={[EffectCards]}
+            className="mySwiper"
+          >
             {images.map((image, index) => (
-                <img key={index} src={image} alt={`Depoimento ${index + 1}`} />
+                <SwiperSlide><img key={index} src={image} alt="" /></SwiperSlide>
             ))}
-        </S.Depoimentos>
-    );
-};
-
-export default CarrosselProvas;
+          </Swiper>
+        </S.Container>
+      );
+}
