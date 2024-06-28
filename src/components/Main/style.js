@@ -52,12 +52,13 @@ export const CardsContainer = styled.div`
    background-color: white;
    background-image: url("/images/grid.jpg");
    font-family: 'Sora', sans-serif;
-   padding: 2rem 1rem 0rem 1rem;
+   padding: 2rem 1rem 2rem 1rem;
 
    h1 {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 20pt;
+      color: #0E0F1D;
       max-width: 728px;
    }
 `
@@ -142,5 +143,49 @@ export const ModulosContainer = styled.div`
          margin-top: -0.5rem;
           margin-bottom: 1.6rem;
    }
+   }
+`
+
+export const CopyContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: white;
+   background-image: url("/images/grid.jpg");
+   font-family: 'Sora', sans-serif;
+   padding: 2rem 1rem 2rem 1rem;
+
+
+   img {
+      width: 300px;
+   }
+
+   h1 {
+      text-align: center;
+      color: #0E0F1D;
+   }
+
+   h2 {
+      color: #ff8c00;
+      text-align: center;
+      font-weight: 500;
+   }
+
+   h3 {
+      width: 450px;
+      text-align: center;
+      color: #0E0F1D;
+      font-weight: 900;
+   }
+
+   h4 {
+      color: red;
+      font-weight: 300;
+      font-size: 10pt;
+
+      span {
+         color: black;
+      }
    }
 `

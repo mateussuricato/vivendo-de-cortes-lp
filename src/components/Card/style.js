@@ -23,4 +23,5 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 font-size: 17pt;
+color: #0E0F1D;
 `

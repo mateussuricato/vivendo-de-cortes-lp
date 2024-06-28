@@ -17,7 +17,7 @@ export default function Main() {
                 </S.FlexTwo>
             </S.Container>
             <S.CardsContainer>
-                <h1>ESSA É A MANEIRA MAIS FÁCIL DE COMEÇAR A GANHAR DINHEIRO NA INTERNET</h1>
+                <h1>Essa é a Maneira Mais Fácil de Começar a Ganhar Dinheiro na Internet</h1>
                 <Card emoji={`✅`} text={'Sem precisar aparecer'}/>
                 <Card emoji={`✅`} text={'Sem precisar investir nenhum real'}/>
                 <Card emoji={`✅`} text={'Sem gastar nenhum centavo com tráfego pago'}/>
@@ -26,7 +26,6 @@ export default function Main() {
                 <h2>Veja um pouco do que você irá aprender</h2>
                 <SwiperDiv></SwiperDiv>
                 <div className="provasContainer">
-                
                         <div className="carrosselContainer">
                             <h2 className="titlePerfils">Páginas que aplicaram o Método e estão Vivendo de Cortes</h2>
                         <Carrossel></Carrossel>
@@ -36,10 +35,16 @@ export default function Main() {
                         <h2 className="titleProva">Resultados de Pessoas que Aplicaram o Método</h2>
                         </div>
                         <CarrosselProvas></CarrosselProvas>
-                
                     </div>
                 </div>
             </S.ModulosContainer>
+            <S.CopyContainer>
+                <h1>Eu vou te ensinar a Técnica da Dupla Aliança </h1>
+                <h2>e você vai conseguir multiplicar seus ganhos</h2>
+                <img src="/images/alianca.webp" alt="" />
+                <h3>com essa técnica simples de implementar eu consegui ganhar milhares de reais a mais</h3>
+                <h4><span>(</span>o único método na internet que ensina essa técnica<span>)</span></h4>
+            </S.CopyContainer>
         </div>
     )
 }
