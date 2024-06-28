@@ -67,6 +67,23 @@ export const ModulosContainer = styled.div`
    background-color: #000000;
    overflow-x: hidden;
 
+   .provasContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      @media (min-width: 900px) {
+        gap: 9rem;
+    }
+   }
+
+   .flexSpace {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+   }
 
    h2 {
       color: #ffffff;
@@ -74,18 +91,49 @@ export const ModulosContainer = styled.div`
    }
 
    .titlePerfils {
-      margin-top: 2rem;
+      padding: 0 1rem;
+      max-width: 400px;
    }
 
    .titleProva {
-      margin-top: 4rem;
+      padding: 0 1rem;
+  
+
    }
 
    .carrosselContainer {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      margin-top: -2rem;
+      justify-content: space-between;
+
+     
+
+      @media (min-width: 995px) {
+        height: 700px;
+    }
+   }
+
+   .carrosselContainer2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+
+      @media (min-width: 995px) {
+        height: 710px;
+    }
+
+ 
+   }
+
+   .titleCenter {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 995px) {
+          margin-bottom: 2rem;
+   }
    }
 `

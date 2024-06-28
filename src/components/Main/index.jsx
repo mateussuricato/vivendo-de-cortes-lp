@@ -25,13 +25,19 @@ export default function Main() {
             <S.ModulosContainer>
                 <h2>Veja um pouco do que você irá aprender</h2>
                 <SwiperDiv></SwiperDiv>
-                <div className="carrosselContainer">
-                    <h2 className="titlePerfils">Páginas que aplicaram o Método e estão Vivendo de Cortes</h2>
-                <Carrossel></Carrossel>
-                </div>
-                <div className="carrosselContainer">
-                    <h2 className="titleProva">Mais Resultados do Método</h2>
-                <CarrosselProvas></CarrosselProvas>
+                <div className="provasContainer">
+                
+                        <div className="carrosselContainer">
+                            <h2 className="titlePerfils">Páginas que aplicaram o Método e estão Vivendo de Cortes</h2>
+                        <Carrossel></Carrossel>
+                        </div>
+                    <div className="carrosselContainer2">
+                        <div className="titleCenter">
+                        <h2 className="titleProva">Mais Resultados do Método</h2>
+                        </div>
+                        <CarrosselProvas></CarrosselProvas>
+                
+                    </div>
                 </div>
             </S.ModulosContainer>
         </div>
