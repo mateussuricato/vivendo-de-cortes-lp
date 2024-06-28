@@ -169,11 +169,11 @@ export const CopyContainer = styled.div`
    h2 {
       color: #ff8c00;
       text-align: center;
-      font-weight: 500;
+      font-weight: 600;
    }
 
    h3 {
-      width: 450px;
+      max-width: 450px;
       text-align: center;
       color: #0E0F1D;
       font-weight: 900;
@@ -182,7 +182,7 @@ export const CopyContainer = styled.div`
    h4 {
       color: red;
       font-weight: 300;
-      font-size: 10pt;
+      font-size: 9pt;
 
       span {
          color: black;
