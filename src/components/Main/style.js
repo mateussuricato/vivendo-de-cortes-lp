@@ -65,7 +65,8 @@ export const CardsContainer = styled.div`
 export const ModulosContainer = styled.div`
    padding: 2rem 0;
    background-color: #000000;
-   overflow-y: hidden;
+   overflow-x: hidden;
+
 
    h2 {
       color: #ffffff;
