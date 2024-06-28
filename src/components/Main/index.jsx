@@ -33,7 +33,7 @@ export default function Main() {
                         </div>
                     <div className="carrosselContainer2">
                         <div className="titleCenter">
-                        <h2 className="titleProva">Mais Resultados do Método</h2>
+                        <h2 className="titleProva">Resultados de Pessoas que Aplicaram o Método</h2>
                         </div>
                         <CarrosselProvas></CarrosselProvas>
                 

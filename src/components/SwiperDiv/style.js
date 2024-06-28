@@ -76,7 +76,7 @@ export const Container = styled.div`
 
     .slider-controler {
         position: relative;
-        bottom: 2rem;
+        bottom: 3rem;
         display: flex;
         align-items: center;
         justify-content: center;

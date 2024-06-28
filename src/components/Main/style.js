@@ -93,9 +93,15 @@ export const ModulosContainer = styled.div`
    .titlePerfils {
       padding: 0 1rem;
       max-width: 400px;
+
+      @media (max-width: 995px) {
+         margin-top: -2rem;
+          margin-bottom: -1rem;
+   }
    }
 
    .titleProva {
+      max-width: 400px;
       padding: 0 1rem;
   
 
@@ -133,7 +139,8 @@ export const ModulosContainer = styled.div`
       justify-content: center;
 
       @media (max-width: 995px) {
-          margin-bottom: 2rem;
+         margin-top: -0.5rem;
+          margin-bottom: 1.6rem;
    }
    }
 `
