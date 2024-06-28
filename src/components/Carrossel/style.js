@@ -5,6 +5,7 @@ export const Container = styled.div`
 
 margin-top: 3rem;
 
+
 img {
     width: 300px;
     display: inline-block;
