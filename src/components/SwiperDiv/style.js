@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
+
     /* @media (min-width: 1440px) {
         html {
             zoom: 1.5;
@@ -69,7 +71,7 @@ export const Container = styled.div`
 
     .swiper-slide-shadow-left,
     .swiper-slide-shadow-right {
-        display: none;
+        /* display: none; */
     }
 
     .slider-controler {
@@ -124,9 +126,7 @@ export const Container = styled.div`
         content: '';
     }
 
-    .swiper-wrapper {
-        width: 10%;
-    }
+
 
     .swiper-pagination {
         position: relative;
