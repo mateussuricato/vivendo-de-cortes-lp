@@ -189,3 +189,48 @@ export const CopyContainer = styled.div`
       }
    }
 `
+
+export const Oferta = styled.div`
+  display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: black;
+   padding: 2rem 1rem;
+
+   h1 {
+      color: white;
+      margin-bottom: 3rem;
+      text-align: center;
+   }
+   
+`
+export const imageContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  border-radius: 18px;
+  max-width: 500px;
+  border: 2px solid orange;
+  outline: 2px solid orange;
+  outline-offset: 5px;
+  box-shadow: 0px 0px 20px 5px orange; /* inset adicionado aqui */
+
+   
+   div {
+      margin-bottom: 3rem;
+      cursor: pointer;
+   }
+
+  img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 18px;
+
+  }
+
+  .button {
+   display: none;
+  }
+`

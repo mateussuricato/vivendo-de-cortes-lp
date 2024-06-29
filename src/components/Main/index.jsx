@@ -3,6 +3,7 @@ import Card from "../Card"
 import * as S from "./style"
 import CarrosselProvas from "../CarrosselProvas"
 import Carrossel from "../Carrossel"
+import Button from "../Button";
 
 export default function Main() {
     return (
@@ -45,6 +46,13 @@ export default function Main() {
                 <h3>com essa técnica simples de implementar eu consegui ganhar milhares de reais a mais</h3>
                 <h4><span>(</span>o único método na internet que ensina essa técnica<span>)</span></h4>
             </S.CopyContainer>
+            <S.Oferta>
+            <h1>Então chegou a hora de você criar um negócio digital</h1>
+                <S.imageContainer>
+                    <img src="/images/ofertavivendodecortes.webp" alt="" />
+                    <Button/>
+                </S.imageContainer>
+            </S.Oferta>
         </div>
     )
 }
