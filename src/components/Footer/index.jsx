@@ -1,16 +1,41 @@
+import Accordion from "../Accordion"
 import * as S from "./style"
 
 export default function Footer() {
     return (
         <S.Container>
-              <details>
-				<summary>COMO IREI RECEBER O PRODUTO?</summary>
-				<p class="reposta">O acesso ao produto é imediato após a confirmação do seu pagamento. É enviado o seu acesso ao seu e-mail e WhatsApp, você faz o download do conteúdo no seu celular e pronto!</p>
-			  </details>
-			  <details>
-				<summary>TEREI ACESSO AO LIVRO POR QUANTO TEMPO?</summary>
-				<p class="reposta">Você terá acesso vitalício, a partir do momento em que você o adquire, você terá o livro para desfrutar as suas lições pelo resto da sua vida. </p>
-			  </details>
+             <Accordion
+                title={"Posso fazer o pagamento por quais meios?"}
+                content={'Você pode pagar via PIX à vista por apenas R$ 97, ou se preferir, no crédito em 12x de R$ 9,70'}
+             />
+             <Accordion
+                title={"Como vou receber o acesso ao método?"}
+                content={'Assim que o seu pagamento for confirmado você receberá um e-mail com seus dados de acesso na plataforma Doppus. Dependendo da forma de pagamento, é instantâneo.'}
+             />
+             <Accordion
+                title={"Como funciona as aulas?"}
+                content={'As aulas são gravadas e atualizadas constantemente. Você pode assistir no celular ou computador.'}
+             />
+             <Accordion
+                title={"Não tenho computador, consigo ter resultados apenas usando o celular?"}
+                content={'Com o método Vivendo de Cortes você vai aprender tudo o que é necessário para crescer, viralizar e lucrar com vídeos curtos usando apenas seu celular ou computador com acesso à internet.'}
+             />
+             <Accordion
+                title={"Em quanto tempo vou ter resultados com o que vou aprender no treinamento?"}
+                content={'Tudo depende da sua disponibilidade para estudar e praticar o que ensinamos. Em média 3 semanas nossos alunos já estão colhendo frutos do seu trabalho.'}
+             />
+             <Accordion
+                title={"Por quanto tempo terei acesso ao curso?"}
+                content={'O acesso é vitalício, com direito a atualizações das aulas sem pagar nada a mais por isso.'}
+             />
+             <Accordion
+                title={"Existe alguma garantia?"}
+                content={'Você pode pagar via PIX à vista por apenas R$ 97, ou se preferir, no crédito em 12x de R$ 9,70'}
+             />
+             <Accordion
+                title={"Tem suporte ao aluno?"}
+                content={'Você vai ter acesso ao nosso suporte exclusivo diretamente no WhastApp.'}
+             />
         </S.Container>
     )
 }
