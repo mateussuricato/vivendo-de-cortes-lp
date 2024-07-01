@@ -199,6 +199,10 @@ export const Oferta = styled.div`
    background-color: black;
    padding: 2rem 1rem;
 
+   .imagePadding {
+   padding: 0 4rem;
+  }
+
    h1 {
       color: white;
       margin-bottom: 3rem;

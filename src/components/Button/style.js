@@ -25,16 +25,14 @@ export const Button = styled.a`
   font-family: 'Sora', sans-serif;
   cursor: pointer;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.72);
-  padding: 10px 20px;
+  padding: 10px 15px;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 21px;
+  font-size: 20px;
   border-radius: 5px;
   border: none;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 71px 7px #fff500;
-  -moz-box-shadow: 0px 0px 71px 7px #fff500;
-  box-shadow: 0px 0px 71px #fff500;
+  
   background: linear-gradient(90deg, #fff500, #c67000, #f48a00);
   background-size: 700% 400%;
   animation: ${zoomIn} 0.7s ease-in-out infinite alternate, ${moveBackground} 5s ease infinite; /* Aplica ambas as animações */

@@ -48,10 +48,12 @@ export default function Main() {
             </S.CopyContainer>
             <S.Oferta>
             <h1>Então chegou a hora de você criar um negócio digital</h1>
+                    <div className="imagePadding">
                 <S.imageContainer>
                     <img src="/images/ofertavivendodecortes.webp" alt="" />
                     <Button/>
                 </S.imageContainer>
+                    </div>
             </S.Oferta>
         </div>
     )
