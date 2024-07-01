@@ -7,6 +7,16 @@ export const Container = styled.div`
 	background-repeat: no-repeat;
 	background-size: cover;
 
+    img {
+        padding: 3rem 0 2rem 0;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        width: 100%;
+        max-width: 250px;
+    }
+
     .headline {
         font-size: 2rem;
         max-width: 580px;
