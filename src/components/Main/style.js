@@ -158,7 +158,8 @@ export const CopyContainer = styled.div`
 
 
    img {
-      width: 300px;
+      width: 100%;
+      max-width: 500px;
    }
 
    h1 {
