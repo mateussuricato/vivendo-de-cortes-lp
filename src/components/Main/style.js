@@ -200,7 +200,7 @@ export const Oferta = styled.div`
    padding: 2rem 1rem;
 
    .imagePadding {
-   padding: 0 2rem;
+   padding: 0 1.5rem;
   }
 
    h1 {
