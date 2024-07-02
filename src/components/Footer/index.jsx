@@ -7,7 +7,7 @@ export default function Footer() {
          <h1>Dúvidas</h1>
              <Accordion
                 title={"Posso fazer o pagamento por quais meios?"}
-                content={'Você pode pagar via PIX à vista por apenas R$ 97, ou se preferir, no crédito em 12x de R$ 9,70'}
+                content={'Você pode pagar via PIX à vista por apenas R$97, ou se preferir, no crédito em 12x de R$9,70'}
              />
              <Accordion
                 title={"Como vou receber o acesso ao método?"}

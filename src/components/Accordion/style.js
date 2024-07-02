@@ -13,8 +13,9 @@ export const AccordionContainer = styled.div`
 `;
 
 export const AccordionTitle = styled.div`
+  font-weight: 600;
   padding: 0.7rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   color: #000000;
   display: flex;
