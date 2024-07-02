@@ -7,8 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     background-color: #000000;
-    padding-bottom: 3rem;
-    padding: 0 1rem;
+    padding: 0 1rem 3rem 1rem;
 
     h1 {
         color: white;

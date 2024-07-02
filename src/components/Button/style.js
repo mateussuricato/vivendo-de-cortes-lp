@@ -25,7 +25,7 @@ export const Button = styled.a`
   font-family: 'Sora', sans-serif;
   cursor: pointer;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.72);
-  padding: 10px 15px;
+  padding: 20px 15px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 20px;

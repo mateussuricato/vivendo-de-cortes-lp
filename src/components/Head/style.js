@@ -14,7 +14,7 @@ export const Container = styled.div`
         align-self: center;
         margin: auto;
         width: 100%;
-        max-width: 250px;
+        max-width: 225px;
     }
 
     .headline {

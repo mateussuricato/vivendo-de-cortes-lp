@@ -9,7 +9,7 @@ export const Container = styled.div`
     justify-content: center;
     background-color: black;
     color: white;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
 `
 
 export const FlexOne = styled.div`
@@ -52,7 +52,7 @@ export const CardsContainer = styled.div`
    background-color: white;
    background-image: url("/images/grid.jpg");
    font-family: 'Sora', sans-serif;
-   padding: 2rem 1rem 2rem 1rem;
+   padding: 1rem 1rem 2rem 1rem;
 
    h1 {
       text-align: center;
@@ -64,7 +64,7 @@ export const CardsContainer = styled.div`
 `
 
 export const ModulosContainer = styled.div`
-   padding: 2rem 0;
+   padding: 1rem 0 2rem 0;
    background-color: #000000;
    overflow-x: hidden;
 
@@ -74,6 +74,7 @@ export const ModulosContainer = styled.div`
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
+      padding-bottom: 1rem;
 
       @media (min-width: 900px) {
         gap: 9rem;
@@ -154,7 +155,7 @@ export const CopyContainer = styled.div`
    background-color: white;
    background-image: url("/images/grid.jpg");
    font-family: 'Sora', sans-serif;
-   padding: 2rem 1rem 2rem 1rem;
+   padding: 1rem 1rem 2rem 1rem;
 
 
    img {
@@ -197,7 +198,7 @@ export const Oferta = styled.div`
    align-items: center;
    justify-content: center;
    background-color: black;
-   padding: 2rem 1rem 4rem 1rem;
+   padding: 1rem 1rem 4rem 1rem;
 
    .imagePadding {
    padding: 0 1.5rem;
@@ -244,7 +245,7 @@ export const Garantia = styled.div`
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   padding: 2rem ;
+   padding: 1rem 1rem 2rem 1rem;
    
 
    h4 {
@@ -274,7 +275,7 @@ export const Garantia = styled.div`
       }
 
       img {
-         max-width: 300px;
+         max-width: 250px;
          margin-bottom: 1rem;
       }
 `
