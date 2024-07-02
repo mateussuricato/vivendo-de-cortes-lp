@@ -59,7 +59,7 @@ export default function Main() {
                 <h4>SE VOCÊ CHEGOU ATÉ AQUI É PORQUE TEM INTERESSE</h4>
                 <h5>ENTÃO  QUERO TE PROPOR UM ACORDO:</h5>
                 <img src="/images/garantia.webp" alt="" />
-                <p>Entre no Método <strong>Vivendo de Cortes</strong> e assista às aulas e se em 7 dias você não gostar, eu devolvo o seu dinheiro e tá tudo bem. </p>
+                <p>Entre no Método <strong>Vivendo de Cortes</strong> e assista às aulas e se em 7 dias você não gostar, eu devolvo o seu dinheiro e tá tudo bem.</p>
             </S.Garantia>
         </div>
     )

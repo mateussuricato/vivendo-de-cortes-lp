@@ -233,6 +233,7 @@ align-items: center;
     max-width: 500px;
     width: 100%;
     border-radius: 18px;
+    margin-bottom: 1.1rem;
 
   }
 
