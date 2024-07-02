@@ -11,7 +11,7 @@ export default function Footer() {
              />
              <Accordion
                 title={"Como vou receber o acesso ao método?"}
-                content={'Assim que o seu pagamento for confirmado você receberá um e-mail com seus dados de acesso na plataforma Doppus. Dependendo da forma de pagamento, é instantâneo.'}
+                content={'Assim que o seu pagamento for confirmado você receberá um e-mail com seus dados de acesso na plataforma Kirvano. Dependendo da forma de pagamento, é instantâneo.'}
              />
              <Accordion
                 title={"Como funciona as aulas?"}
