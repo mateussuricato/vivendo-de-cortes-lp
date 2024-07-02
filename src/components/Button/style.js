@@ -33,15 +33,19 @@ export const Button = styled.a`
   border: none;
   color: #fff;
   
-  background: linear-gradient(90deg, #fff500, #c67000, #f48a00);
+  background: linear-gradient(90deg, #109010, #008000, #0a5c0a);
   background-size: 700% 400%;
-  animation: ${zoomIn} 0.7s ease-in-out infinite alternate, ${moveBackground} 5s ease infinite; /* Aplica ambas as animações */
+  animation: ${zoomIn} 0.5s ease-in-out infinite alternate, ${moveBackground} 2s ease infinite; /* Aplica ambas as animações */
 
   &:hover {
-    animation: ${zoomIn} 0.7s ease-in-out infinite alternate, none; /* Reaplica a animação zoomIn no hover */
+    animation: ${zoomIn} 0.5s ease-in-out infinite alternate, none; /* Reaplica a animação zoomIn no hover */
   }
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (max-width: 475px) {
+    font-size: 18.5px;
   }
 `;

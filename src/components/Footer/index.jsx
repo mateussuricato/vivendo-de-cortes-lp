@@ -4,6 +4,7 @@ import * as S from "./style"
 export default function Footer() {
     return (
         <S.Container>
+         <h1>Dúvidas</h1>
              <Accordion
                 title={"Posso fazer o pagamento por quais meios?"}
                 content={'Você pode pagar via PIX à vista por apenas R$ 97, ou se preferir, no crédito em 12x de R$ 9,70'}

@@ -168,7 +168,7 @@ export const CopyContainer = styled.div`
    }
 
    h2 {
-      color: #ff8c00;
+      color: green;
       text-align: center;
       font-weight: 600;
    }
@@ -197,7 +197,7 @@ export const Oferta = styled.div`
    align-items: center;
    justify-content: center;
    background-color: black;
-   padding: 2rem 1rem;
+   padding: 2rem 1rem 4rem 1rem;
 
    .imagePadding {
    padding: 0 1.5rem;
@@ -238,4 +238,43 @@ align-items: center;
   .button {
    display: none;
   }
+`
+export const Garantia = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem ;
+   
+
+   h4 {
+      font-size: 19pt;
+      max-width: 728px;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+   }
+
+   h5 {
+      margin-bottom: 1rem;
+      font-size: 15pt;
+      color: green;
+      font-weight: 800;
+      text-align: center;
+   }
+
+   p {
+         max-width: 470px;
+         font-size: 17pt;
+         text-align: center;
+      }
+
+      strong {
+         font-weight: 900;
+      }
+
+      img {
+         max-width: 300px;
+         margin-bottom: 1rem;
+      }
 `
