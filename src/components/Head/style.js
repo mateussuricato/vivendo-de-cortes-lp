@@ -51,4 +51,5 @@ export const Container = styled.div`
 export const VslContainer = styled.div`
     max-width: 700px;
 	margin: 1.2rem auto 0 auto;
+    padding: 0 0.5rem;
 `
