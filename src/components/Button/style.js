@@ -32,6 +32,7 @@ export const Button = styled.a`
   border-radius: 5px;
   border: none;
   color: #fff;
+  text-decoration: none;
 
   
   background: linear-gradient(90deg, #109010, #008000, #0a5c0a);
