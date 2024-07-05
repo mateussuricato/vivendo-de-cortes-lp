@@ -31,7 +31,7 @@ export default function Footer() {
              />
              <Accordion
                 title={"Existe alguma garantia?"}
-                content={'Você pode pagar via PIX à vista por apenas R$ 97, ou se preferir, no crédito em 12x de R$ 9,70'}
+                content={'Sim, se você não gostar do conteúdo, poderá pedir seu dinheiro de volta, sem nenhum questionamento em 7 dias.'}
              />
              <Accordion
                 title={"Tem suporte ao aluno?"}

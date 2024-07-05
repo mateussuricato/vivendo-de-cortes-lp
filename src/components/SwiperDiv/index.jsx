@@ -10,9 +10,9 @@ import 'swiper/css/navigation'
 import slide_image1 from '../../images/modulos/1.png';
 import slide_image2 from "../../images/modulos/2.png"
 import slide_image3 from "../../images/modulos/3.png"
-import slide_image4 from "../../images/modulos/4.png"
+import slide_image4 from "../../images/modulos/4.webp"
 import slide_image5 from "../../images/modulos/5.png"
-import slide_image6 from "../../images/modulos/6.png"
+import slide_image6 from "../../images/modulos/6.webp"
 
 export default function SwiperDiv() {
     return (
