@@ -8,8 +8,8 @@ export default function Vsl() {
           <iframe
             frameborder="0"
             allowfullscreen
-            src="https://player-vz-d8fb2fc1-5b6.tv.pandavideo.com.br/embed/?v=00672039-20d1-492c-a15d-f25c47a28598"
-            id="panda-00672039-20d1-492c-a15d-f25c47a28598"
+            src="https://player-vz-d8fb2fc1-5b6.tv.pandavideo.com.br/embed/?v=deac27ab-e21d-487a-abab-0eede04fec53"
+            id="panda-deac27ab-e21d-487a-abab-0eede04fec53"
 			style={{
 				position: "absolute",
 				top: 0,
